@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if already_verify %}
+        <p>Dear user you have already verified.</p>
+    {% else %}
+        {% if expire %}
+            <p><a href="{% url 'account:newverification' key=activation_key %}">Click here</a> to send new email for verification.</p>
+        {% else %}
+            <p>Congratulation!! your email is verified.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
